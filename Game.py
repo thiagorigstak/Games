@@ -1,6 +1,7 @@
 import Foods
 import pygame
 import GameOver
+import time
 
 def mov(tela, y_init, x_init, eixo_x, eixo_y, snake_lst, tam):
     Blk = (0,0,0)
