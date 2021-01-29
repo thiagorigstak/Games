@@ -1,5 +1,5 @@
 import pygame
-import Game
+import Menu
 
 def over(tela,pont):
     blk = (0,0,0)
@@ -7,7 +7,7 @@ def over(tela,pont):
     white = (255,255,255)
     fonte = pygame.font.SysFont(None, 30)
     fonte2 = pygame.font.SysFont(None, 40)
-    msg = fonte.render("Voce Perdeu, para continuar pressione K, ou ESC para sair",True,red)
+    msg = fonte.render("Voce Perdeu, para voltar ao menu pressione ESC",True,red)
     value = fonte2.render(f'Seu Score: {pont}', True, white)
     tela.blit(msg, [100,300])
     tela.blit(value, [250,200])
@@ -19,9 +19,6 @@ def over(tela,pont):
                     pygame.quit()
                     quit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_k:
-                    Game.mov(tela,400,300,0,0,[],1)
-                elif event.key == pygame.K_ESCAPE:
-                    pygame.quit()
-                    quit()
+                if event.key == pygame.K_ESCAPE:
+                    Menu.menu(tela)
         pygame.display.update()
